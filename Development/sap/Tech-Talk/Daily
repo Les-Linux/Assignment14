@@ -1,4 +1,0 @@
-var __ = {
-  validateIP: validateIP,
-  System: isNode ? system : System
-}

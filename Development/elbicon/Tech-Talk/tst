@@ -1,4 +1,0 @@
-$vRA=10.248.34.44
-#curl --insecure -H "Accept: application/json" -H 'Content-Type: application/json' --data '{"username":"I341979@ycs.io","password":"_Welcome2019!!"}' https://10.248.34.44/identity/api/tokens
-curl --insecure -H "Accept: application/json" -H 'Content-Type: application/json' --data '{"username":"I341979@ycs.io","password":"_Welcome2019!!"},"default_tenant":"ycommerce"' https://10.248.34.44/identity/api/tokens
-

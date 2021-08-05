@@ -1,8 +1,0 @@
-09-jul-2019 Source: SMTP Subject:[CONFIDENTIAL] 0020751294 0000326821 2019 - BYK Chemie GMBH - Please assign processor Notes: Changes were carried out under the master jira by sysadmin's, which should have had a dedicated ticket in the appropriate queue. SOC may require further training on what activities are generally carried out by which teams.
-10-jul-2019 Source: BCP-383629. SRE are consuming a splunk service for Samsung, which is providided and managed by Security. SRE kept referring the ticket to the BCP infra queu with a TAM chasing for updates from INFRA. NOTES: An educational matter
-11-jul-2019 Source: SMTP Subject: [MOW1.2] Trendmicro implementation -Feedback about SOCs Notes: In short, account was requested for 1.2, SOC created account in 1.1. Ticket remained open as creds were not setup correctly and Marco got roped in on the situation.
-15-Jul-2019 Source: BCP-388142 Notes: SOC essentially passing a user creds task which they should action to different teams, including INFRA.
-15-Jul-2019 Source: BCP-372791 Notes: SOC receive screen grab of vpn access issue, after which they immediately reach out to INFR
-15-Jul-2019 Source: BCP-360973 Notes: SOC apply zero investigation then proceed to loop in infra, for a role membership issue
-15-Jul-2019 Source: BCP-415145 Notes: An outage was reported to the SOC for ROT, who proceeded to directly implicate INFRA without reaching out to other teams (sysadmins for log review).
-
