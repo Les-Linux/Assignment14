@@ -1,0 +1,19 @@
+#SSH ROT: SSH I341979@ycs.io@10.248.43.195
+#SSH SYD: ssh I341979@ycs.io@10.192.41.200
+
+#NSX MANAGER
+#ROT: 10.248.34.170
+#SYD:
+#SYD Easy: 10.192.35.244
+
+#CURL COMMAND 
+curl --netrc-file my-uid-creds -vk https://10.248.34.170/api/4.0/edges/edge-nn
+
+#ROT
+machine 10.248.34.170 login I341979@ycs.io password _Welcome2019!!
+
+#SYD YCS
+machine 10.192.41.200 login I341979@ycs.io password _Welcome2019!!
+
+#SYD EASY
+machine 10.192.35.244 login admin password #EnEsEx@dM!n

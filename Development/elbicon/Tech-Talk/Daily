@@ -1,0 +1,38 @@
+  VMware Case SR-19183167105
+  Edge: Edge-3121 Edge-ProjectZonev5101-823d3975-2ff1-4873-ba9a-f9c09efb3a28
+  Location: SY2-Easy
+  Link: https://sy2-vc-easy/vsphere-client/?csp#extensionId%3Dvsphere.core.datacenter.manage.vshield.nat%3Bcontext%3Dcom.vmware.vshield.edge.common%253A%253AEdgeUri~edge%253Avshield%253AEdgeSummaryDto%253AgatewayServices%253A6.3.0%253Afalse%253A0a997d0e-5f0a-4073-a952-d9fa0450ef5a%2540_edge-3121~com.vmware.common%253A%253AIdVersionPair~com.vmware.vshield.plugin.common.networkingsecurity.ui%253A6.3.1.5124716
+
+ [Action Items]
+  1. Configure DNS Settings on the edge
+     PUT https://<NSX-manager-IP>/api/4.0/edges/<edge-id>/dnsclient
+     Body:
+      <dnsClient>
+      <primaryDns>Primary DNS server IP</primaryDns>
+      <secondaryDns>Secondary DNS server IP</secondaryDns>
+      <domainName>Search Domain</domainName>
+      </dnsClient>
+ 
+ Vmware Case SR-VMware NSX for vSphere - SR 19203769605 
+ Edge:
+ Location: ROT 1.2
+ Link:
+
+ [Action]
+ Gather LogInsight Events for Date Range of outage May 16, 16:06-16:24 UTC
+  "Starting updateFirewallSection for Policy".
+  "Starting publishFirewallSections for Policy Name"
+  "#PF: Finished publishFirewallSections for Policy Name"
+  "FinishedupdateFirewallSection for Policy:"
+EOL
+
+NSX Edge CLI Capture Commands
+debug packet display interface INTERFACE host_EXTERNALIP-OF-DESTINATION-EDGE_and_tcp_port_PORT eg:
+debug packet display interface any host_11.22.33.44_and_tcp_port_80
+debug packet display interface vNic_0 udp
+debug packet display interface vNic_0 icmp
+debug packet display interface vNic_0 host_10.10.10.10
+debug packet display interface vNic_0 tcp_src_port_53
+debug packet display interface vNic_0 host_10.10.10.10
+debug packet display interface any host_10.10.10.10_or_host_11.22.33.44
+debug packet display interface vNic_0 tcp_dst_port_80

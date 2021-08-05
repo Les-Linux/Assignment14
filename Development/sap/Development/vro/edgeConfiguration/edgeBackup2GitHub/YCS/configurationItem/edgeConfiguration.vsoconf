@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config-element id="90221010-7fcf-42c8-af9f-ea89f13bcc2b" version="0.0.0">
+  <display-name><![CDATA[edgeConfiguration]]></display-name>
+  <atts>
+    <att name="restPath" type="Array/string" read-only="false">
+      <value encoded="n"><![CDATA[#{#string#/4.0/edges/%edge#;#string#/4.0/edges/%edge/loadbalancer/config#}#]]></value>
+      <description><![CDATA[REST API Endpoint for Edge Configuration]]></description>
+    </att>
+    <att name="exportDestination" type="string" read-only="false">
+      <value encoded="n"><![CDATA[]]></value>
+      <description><![CDATA[GIT | FTP Site Details]]></description>
+    </att>
+    <att name="githubUID" type="string" read-only="false">
+      <value encoded="n"><![CDATA[svc-vro2github-serviceuser]]></value>
+      <description><![CDATA[Export Destination UID]]></description>
+    </att>
+    <att name="githubPersonalToken" type="SecureString" read-only="false">
+      <value encoded="n"><![CDATA[40BH30Q62S61R39O35V66G35G39K31M64I31K38H35I36W33G30S33R63Q61Z37Y64U39O63T62S36Z65M34N63Y35M65I34N31H66W39W36T62O61O62V31U39Z]]></value>
+      <description><![CDATA[Export Destination PWD]]></description>
+    </att>
+    <att name="restAllEdgeIds" type="string" read-only="false">
+      <value encoded="n"><![CDATA[/4.0/edges]]></value>
+      <description><![CDATA[REST API Endpoint for Edge IDs]]></description>
+    </att>
+    <att name="restUser" type="string" read-only="false">
+      <value encoded="n"><![CDATA[admin]]></value>
+      <description><![CDATA[NSX Manager REST User Account]]></description>
+    </att>
+    <att name="restPassword" type="SecureString" read-only="false">
+      <value encoded="n"><![CDATA[11BV48H79X62V72Y69X73S31U32X33T34Y40WEEF8C83N2065539MAAD22DCKC4E4482Z94A2300T2A1119CK7D094F8TA504D2DT73EE883IF5E8D24V50502DBU32BFB2AZ5F336E7Q483EE1ES5E4EA0BTAE2BACET5228BDDGA96C38N1E2AB06YAB7D791Q9DC5575J]]></value>
+      <description><![CDATA[NSX manager REST User Password]]></description>
+    </att>
+    <att name="restHost" type="string" read-only="false">
+      <value encoded="n"><![CDATA[https://bo2-inf-nsx-002.ycsdev.io/api]]></value>
+      <description><![CDATA[NSX Manager]]></description>
+    </att>
+    <att name="archiveExtensionSuffix" type="string" read-only="false">
+      <value encoded="n"><![CDATA[.zip]]></value>
+      <description><![CDATA[Archive File Name Extension / Suffix]]></description>
+    </att>
+    <att name="archiveFileNamePrefix" type="string" read-only="false">
+      <value encoded="n"><![CDATA[Backup-Configuration-]]></value>
+      <description><![CDATA[Archive File Name Prefix]]></description>
+    </att>
+    <att name="edgeConfigurationExtensionSuffix" type="string" read-only="false">
+      <value encoded="n"><![CDATA[.xml]]></value>
+      <description><![CDATA[Edge Configuration File Name Extension]]></description>
+    </att>
+    <att name="base64Encode" type="string" read-only="false">
+      <value encoded="n"><![CDATA[openssl base64 -in %inFile -out %outFile -A]]></value>
+      <description><![CDATA[Base64 Encoding Statement]]></description>
+    </att>
+    <att name="curlGitHub" type="string" read-only="false">
+      <value encoded="n"><![CDATA[ curl -k -X PUT https://github.tools.sap/api/v3/repos/GCS-Hybris-Global-Infrastructure/edge_configuration/contents/bo2/%fileName --data '{"message": "BO2 Edge Configuration Backup","committer": {"name": "%nsxManager","email": "donotreply@sap.com"},"content": "%base64Encoding"' -u %uid:%pwd 2>&1]]></value>
+      <description><![CDATA[Curl Statement for uploading archive files to SAP Enterprise GitHub]]></description>
+    </att>
+    <att name="base64FileExtension" type="string" read-only="false">
+      <value encoded="n"><![CDATA[.b64]]></value>
+      <description><![CDATA[Base64 Encoded Archive File Extension]]></description>
+    </att>
+    <att name="scriptExtension" type="string" read-only="false">
+      <value encoded="n"><![CDATA[.sh]]></value>
+      <description><![CDATA[GitHub Curl Command Script File Extension]]></description>
+    </att>
+    <att name="chmodCommand" type="string" read-only="false">
+      <value encoded="n"><![CDATA[chmod 755 ]]></value>
+      <description><![CDATA[Change Mode Command on GitHub Curl Script File]]></description>
+    </att>
+  </atts>
+</config-element>
