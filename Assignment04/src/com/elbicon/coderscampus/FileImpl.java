@@ -3,7 +3,7 @@ package com.elbicon.coderscampus;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class FileImpl implements FileService {
@@ -29,26 +29,35 @@ public class FileImpl implements FileService {
     }
 
     @Override
-    public void writeLine(File file, String username, String changeValue, int changeType) throws IOException {
+    public Person writeLine(File file, String username, String changeValue, int changeType) throws IOException {
         Person[] users = readLine(file);
-        try(BufferedWriter fileWriter = new BufferedWriter(new FileWriter(file))) {
+        Person changedUserCredential = null;
+        try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter(file))) {
             for (Person user : users) {
                 if (user.getUsername().equals(username)) {
                     switch (changeType) {
-                        case 1:
+                        case 1 -> {
                             user.setUsername(changeValue);
-                            break;
-                        case 2:
+                            changedUserCredential = user;
+                        }
+                        case 2 -> {
                             user.setPassword(changeValue);
-                            break;
-                        case 3:
+                            changedUserCredential = user;
+                        }
+                        case 3 -> {
                             user.setName(changeValue);
-                            break;
+                            changedUserCredential = user;
+                        }
                     }
                 }
+            }
+            Arrays.sort(users);
+
+            for (Person user : users) {
                 fileWriter.write(user.getUsername() + ", " + user.getPassword() + ", " + user.getName() + ", " + user.getRole() + "\r\n");
             }
         }
+        return changedUserCredential;
     }
 
     private Person userTypeValidator(String[] user) {
@@ -69,7 +78,7 @@ public class FileImpl implements FileService {
                 return normalUser;
             }
         } catch (Exception e) {
-            System.out.println("Exception Caught: " + e.toString());
+            System.out.println("Exception Caught: " + e);
         }
         return null;
     }
@@ -81,7 +90,6 @@ public class FileImpl implements FileService {
         try (Stream<String> fileStream = Files.lines(file.toPath(), StandardCharsets.UTF_8)) {
             lineCount = fileStream.count();
         }
-        ;
         return lineCount;
     }
 }

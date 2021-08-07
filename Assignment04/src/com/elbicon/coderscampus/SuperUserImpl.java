@@ -1,6 +1,6 @@
 package com.elbicon.coderscampus;
 
-public class SuperUserImpl extends Person implements UserService{
+public class SuperUserImpl extends Person implements UserService {
     private String username;
     private String password;
     private String name;
