@@ -1,5 +1,7 @@
 package com.elbicon.coderscampus;
 
+import java.util.Locale;
+
 public abstract class Person implements Comparable<Person> {
     public abstract String getUsername();
 
@@ -16,13 +18,14 @@ public abstract class Person implements Comparable<Person> {
     public abstract String getRole();
 
     public abstract void setRole(String role);
-
     @Override
-    public int compareTo(Person that) { //compareTo is a contract method defined in the comparable interface
-        if (this.getRole().compareTo(that.getRole()) == 0) {    // if heights are equal, sort by next criteria - name
-            return this.getUsername().compareTo(that.getUsername());  //sort name in ASC order
-        } else {
-            return that.getRole().compareTo(this.getRole()); //sort height in DESC order
+    public int compareTo(Person that) {
+        if (this.getRole().compareTo(that.getRole()) == 0) {    // if roles are equal, sort by next criteria - Username
+            //System.out.println("'THIS' Role=" + "\"" + this.getRole() + "\"" + " email=" + this.getUsername() +  "\t'THAT' Role=" + "\"" + that.getRole() + "\"" + " email=" + that.getUsername());
+            return this.getUsername().toLowerCase().compareTo(that.getUsername().toLowerCase());
+        } else{
+            //return that.getUsername().toLowerCase().compareTo(this.getUsername().toLowerCase());
+            return that.getRole().compareTo(this.getRole());
         }
     }
 }

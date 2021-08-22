@@ -85,7 +85,7 @@ public class ScannerService extends Menu {
                 line = scanner.nextLine();
                 if (!(line.isEmpty()) & line.matches("[0-4]")) {
                     menuChoice = Integer.parseInt(line);
-                    System.out.println("You select menu item: " + menuChoice);
+                    System.out.println("You selected menu item: " + menuChoice);
                     return menuChoice;
                 }
             }
@@ -110,7 +110,9 @@ public class ScannerService extends Menu {
     public static void lockoutMessage() {
         System.out.println(Menu.lockoutMessage);
     }
-
+    private static void invalidLoginMessage(){
+        System.out.println(Menu.invalidLoginMessage);
+    }
     public static Person promptUserCredential(boolean passwordRequired)  {
         Person user = null;
         int i = 0;
@@ -124,6 +126,9 @@ public class ScannerService extends Menu {
                     } else {
                         user = UserValidator.validate(email, "");
                     }
+                    if(Objects.isNull(user) && i != 4){
+                        invalidLoginMessage();
+                    }
                     i++;
                 } else {
                     break;
@@ -132,7 +137,7 @@ public class ScannerService extends Menu {
 
             if (Objects.isNull(user) && i == 5) {
                 System.out.println(Menu.lockoutMessage);
-            } else {
+            } else{
                 return user;
             }
         } catch (Exception e) {

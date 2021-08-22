@@ -22,6 +22,7 @@ public class MenuValidatorService {
                     String username = ScannerService.promptEmail();
                     user = userFile.writeLine(file, changeUser, username, 1);
                     menuId = ScannerService.promptMenu(user.getName(), user.getRole());
+                    changeUser = user.getUsername();
                 }
                 case 2 -> {
                     String password = ScannerService.promptPassword();
