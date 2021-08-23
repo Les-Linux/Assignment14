@@ -11,7 +11,7 @@ public class Main {
         Integer menuOption = null;
         Person user = ScannerService.promptUserCredential(true);
         if (Objects.isNull(user)) {
-            System.exit(0);
+            System.exit(0); //user validation failed after 5 attempts
         } else if (!Objects.isNull(user)) {
             menuOption = ScannerService.promptMenu(user.getName(), user.getRole());
             switch (menuOption) {

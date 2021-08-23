@@ -83,7 +83,11 @@ public class ScannerService extends Menu {
         try {
             while (menuChoice == -1) {
                 line = scanner.nextLine();
-                if (!(line.isEmpty()) & line.matches("[0-4]")) {
+                if (!(line.isEmpty()) && role.equals(SU_ROLE) && line.matches("[0-4]")) {
+                    menuChoice = Integer.parseInt(line);
+                    System.out.println("You selected menu item: " + menuChoice);
+                    return menuChoice;
+                } else if (!(line.isEmpty()) && role.equals(NU_ROLE) && line.matches("[1-4]")){
                     menuChoice = Integer.parseInt(line);
                     System.out.println("You selected menu item: " + menuChoice);
                     return menuChoice;
