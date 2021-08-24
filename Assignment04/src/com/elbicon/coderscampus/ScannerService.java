@@ -91,6 +91,8 @@ public class ScannerService extends Menu {
                     menuChoice = Integer.parseInt(line);
                     System.out.println("You selected menu item: " + menuChoice);
                     return menuChoice;
+                } else{
+                    System.out.println(Menu.invalidSelection);
                 }
             }
         } catch (Exception e) {

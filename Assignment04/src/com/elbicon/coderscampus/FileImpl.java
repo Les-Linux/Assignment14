@@ -34,7 +34,7 @@ public class FileImpl implements FileService {
         Person changedUserCredential = null;
         try (BufferedWriter fileWriter = new BufferedWriter(new FileWriter(file))) {
             for (Person user : users) {
-                if (user.getUsername().equals(username)) {
+                if (user.getUsername().equals(username)) { //this is where you will get a null exception with empty line
                     switch (changeType) {
                         case 1 -> {
                             user.setUsername(changeValue);

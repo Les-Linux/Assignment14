@@ -13,11 +13,11 @@ public class UserValidator {
         users = userFile.readLine(file);
         for (Person user : users) {
             if (password.equals("")) {
-                if (user.getUsername().toLowerCase().equals(username.trim().toLowerCase())) {
+                if (user.getUsername().equalsIgnoreCase(username.trim())) {
                     return user;
                 }
             } else {
-                if (user.getUsername().toLowerCase().equals(username.trim().toLowerCase()) && user.getPassword().toLowerCase().equals(password.trim())) {
+                if (user.getUsername().equalsIgnoreCase(username.trim()) && user.getPassword().equals(password.trim())) {
                     return user;
                 }
             }
