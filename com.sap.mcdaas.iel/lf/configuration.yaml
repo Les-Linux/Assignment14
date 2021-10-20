@@ -1,12 +1,13 @@
-Hyperscalers:
-  Aws:
-    Token:
-    API:
-    S3-Bucket:
-  Gcp:
-    Token: Gcp-Token-1
-    API: Gcp-Api-1
-    Data-Table: Gcp-Data-Table-1
-  Azure:
-    Token:
-    API:
+hyperscalers:
+  aws:
+    token:
+    api:
+    data-source:
+  gcp:
+    token: gcp-token-1
+    api: gcp-api-1
+    data-source: gcp-data-table-1
+  azure:
+    token:
+    api:
+    data-source:
