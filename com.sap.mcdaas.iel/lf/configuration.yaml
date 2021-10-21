@@ -1,13 +1,13 @@
 hyperscalers:
   aws:
-    token:
-    api:
-    data-source:
+     token: aws-token-1
+     api: aws-api-1
+     data-source: aws-data-source-1
   gcp:
-    token: gcp-token-1
-    api: gcp-api-1
-    data-source: gcp-data-table-1
+     token: gcp-token-1
+     api: gcp-api-1
+     data-source: gcp-data-source-1
   azure:
-    token:
-    api:
-    data-source:
+     token: azure-token-1
+     api: azure-api-1
+     data-source: azure-data-source-1
