@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sap-iidc-cde",
+  "private_key_id": "8a5d0ecbfe9756dd9fa9a3571abab8c206ddb4e9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzhcZT1n/X3BgX\nLybr+NGgWUPvFsiMS66pMk8SmBPmsHBljbhVW9D2TW4Wqxu+1jGi7c5FVWF1FVn4\nNtzzUlN1klWWOyK9gAg9AyB8wx32LMURcYSGCLoeEAdbTsHQnccIsXP7lnUxZ16E\npUoNmZ34Kl0w4/Wp2QmSGFcz//zkM4eymPN38RVseuiiteYTvaoItRpg9XoG5d76\n1D9q29OSQlArNWin1MVT9H68+qPTFcM3fU+wCefKqGzh9Cqes2ltn1TnLWAOjN4f\n5kBCivYCfkaAsYHUIoJ7aiKHg32CcjUupZQME48nwewzcrUdvv4YwqV5hjo2SDC1\nJCH1ZXhVAgMBAAECggEAJkm2QmRBsO6qnqs6UGKphtry/7eqvy1XC5QExFD2EaH4\n3tfqhB4Ig7eA7snAqaNyQ68XarcqiXer0CIXXrfkv/MdWOS05Ji9aRHVKHbO2ZWz\n1CQTYSjUVRwTDZjPAmjcLdD3DSYKSaajxIOiNyNXyzlx1b8QwpBdF7EkTB1hOOQf\nLqnqNikZQLg/GMWGBXULmlN7eVsIBUxYCdS/bZpq/iobG3ciWApX/nVjbDDOZsF7\ncZvP6c173BqAl9BnB36ftKeZxP4hWewREpGBVrHtwXgLPKOr/ZPmrcgNVxx5tgtz\n5P7g6pnNqO7NWa5muIfgnXFSWqG6VcVUepcxkbXA0wKBgQDYPwilnS+gWzf8X5HY\nVSh+6z6U2buTm58CrMzzEgTn67wwXFUfwNg0cXOyoUy/yGYMs7qD381D8Ww73pq6\nmviUvYIAQU/Gz8o76sWlasq7tSCeQH9vYkKWxYG3//+elUYqP8DLz7zdaXlydzV5\nhrIypGHlOuVZ4buiJ9GYr37B8wKBgQDUhnQ4WeTOn2fCDf9KMafSQJlZ/KdV2f6O\nK06RH4ZsdZyL0gWa+nrIv+YXZncJBNY53okHnpPFeT0hjvdAvrvcqLpbYtyKCJE4\nLbxbzGGmMtlj/vod7IF5VpnLzqnnzL34QwdKHjJxoHUkGA691udpLcYxcTj3RR/q\nfIPdeo0mlwKBgQCBTg/JmBgmduUfT7ZR+XnhiqE9OITlWqTWYKWcoyWz2E4LTOrJ\ntfKSSVS5d6IA+7+p0L6ypFyFSBNEKXO0KX6C0l6t8F/XreBru5K7uwPHAiOi/UY2\nQDc5GJjcgYNEPFZcZQrP1ERG0Q8B1y5uoJBln8252GHUQRqFd/HorufI6QKBgQCG\nJ+HReJ2A+Qssal2O3k2L4Y9sSJrxDM0tvZS482eNq6iIcqlrLVa4xrpeZyYZIV6B\n5UIm9ylc7K10M6VMz5oTLseEzKFe2Q2iouxWHmw917d28gu9PAB3Mf2fs/N5CbuZ\nreY6GVnKdHm9sRoNKE2oDWcg6tIE9TOyd6td8fCMPQKBgFTDkM8PqWggvrmVLMTn\n+vo7C/AvZbR6IdMTq8118EECUwrrLAHoWsR7PK4vmZwrVFq7jTNSqJb55D4wIehd\n4OYxrmHsfl5jiRBW6Nmy4/6x5tftD0SjwaAIIvcjYG5MvVNM7M6kUS3dJE6TYiDz\nt7C/wJnxekJ/1SgLnHWU9cof\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloud-datastore-user@sap-iidc-cde.iam.gserviceaccount.com",
+  "client_id": "105462494608712454277",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-datastore-user%40sap-iidc-cde.iam.gserviceaccount.com"
+}

@@ -1,0 +1,15 @@
+# Project Configuration and Last Scan Date
+---
+projects:
+  iel:
+     region: EU_WEST_1
+     bucket: com.sap.mcdaas.iel.dev
+     secrets: configuration/hyperscalerConfiguration.yaml
+     lastScanDate: 2020-11-22_14:00:05 #UTC
+     objectName: "projects/iel/iel.csv"
+  abc:
+     region: abcRegion
+     bucket: abc.bucket
+     secrets: configuration/abcConfiguration.yaml
+     lastScanDate: 2021-12-31T15:00:00Z #UTC
+     objectName: ""
