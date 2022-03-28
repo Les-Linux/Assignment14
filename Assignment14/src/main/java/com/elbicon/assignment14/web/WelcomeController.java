@@ -47,15 +47,15 @@ public class WelcomeController {
     }
 
     @PostMapping("/welcome/channel")
-    public ModelAndView getChannelPage(UserServiceImpl user, Long channelId, ModelMap model) {
+    public ModelAndView getChannelPage(UserServiceImpl user, Long channelId) {
         try {
             if (channelId != null) {
-                //ModelMap model = new ModelMap();
-                model.put("user", user);
-                model.put("channelId", channelId);
+                ModelMap modelMap = new ModelMap();
+                modelMap.put("user", user);
+                modelMap.put("channelId", channelId);
 
                 ModelAndView mv = new ModelAndView("redirect:/channel");
-                mv.addAllObjects(model);
+                mv.addAllObjects(modelMap);
 
                 //return "redirect:/channel";
                 return mv;

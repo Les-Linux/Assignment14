@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Channel Page</title>
@@ -8,8 +8,7 @@
     <h1>Channel Page</h1>
     <div>
         <label>First Name</label>
-        <label th:field="${channelId.channelId}">tmp</label>
-
+        <label th:text="${user.firstName}">tmp</label>
     </div>
 </body>
 </html>
