@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -22,54 +24,49 @@ public class WelcomeController {
     @Autowired
     private ChannelController channelController;
 
+//    @Autowired
+//    ChannelServiceImpl channel;
+
     @GetMapping("/welcome")
     public String getWelcomePage(ModelMap model){
         UserServiceImpl user = new UserServiceImpl();
-        ChannelServiceImpl channel = new ChannelServiceImpl();
-
-
-        Map<Long,String> chatChannel = channel.getChannel();
-        chatChannel.put(Long.valueOf(1),"General");
-        chatChannel.put(Long.valueOf(2),"Support");
-        chatChannel.put(Long.valueOf(3), "All Things DeV");
-
-        // channel properties
-        channel.setChannel(chatChannel);
-
-        // user properties
-        user.setFirstName(" ");
+        //user.setFirstName(" ");
 
         // add to model
         model.put("user",user);
-        model.put("channel", channel);
+        //model.put("channel", channel);
+        model.put("channel", ChannelServiceImpl.getChannels());
 
         return "welcome";
     }
 
     @PostMapping("/welcome/channel")
-    public ModelAndView getChannelPage(UserServiceImpl user, Long channelId) {
+    public String getChannelPage(UserServiceImpl user,
+                                 Long channelId,
+                                 RedirectAttributes redirectAttributes,
+                                 ModelMap model) {
         try {
-            if (channelId != null) {
-                ModelMap modelMap = new ModelMap();
-                modelMap.put("user", user);
-                modelMap.put("channelId", channelId);
+            if ((channelId != null) && (user.getFirstName() != null && (!(user.getFirstName().isEmpty())))) {
+                /*  RequestAttributes nor the SessionAttributes are an option.
+                    That's because the former won't survive a redirection across different controllers,
+                    while the latter will last for the entire session even after the form submission is over.
 
-                ModelAndView mv = new ModelAndView("redirect:/channel");
-                mv.addAllObjects(modelMap);
+                    Flash attributes are short-lived. As such, these are stored temporarily in some underlying
+                    storage, just before the redirect. They remain available for the subsequent request after
+                    redirect, and then they're gone.
+                 */
+                redirectAttributes.addFlashAttribute("firstName", user.getFirstName());
+                redirectAttributes.addFlashAttribute("lastName", user.getLastName());
+                redirectAttributes.addFlashAttribute("fullName", user.getFirstName() + " " + user.getLastName());
+                redirectAttributes.addFlashAttribute("channelId", channelId);
+                redirectAttributes.addFlashAttribute("channelName",ChannelServiceImpl.getChannels().get(Long.valueOf(channelId)).toString());
 
-                //return "redirect:/channel";
-                return mv;
+                return "redirect:/channel/" + channelId;
+
             }
         } catch (Exception e) {
             System.out.println("Exception Caught - " +  e.getMessage());
         }
-        //return "welcome";
-        return new ModelAndView("redirect:/welcome");
-    }
-
-    public static RedirectView safeRedirect(String url) {
-        RedirectView rv = new RedirectView(url);
-        rv.setExposeModelAttributes(false);
-        return rv;
+        return "redirect:/welcome";
     }
 }

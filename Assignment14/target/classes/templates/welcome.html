@@ -15,7 +15,7 @@
     <form th:action="@{/welcome/channel}" th:method="POST">
         <div>
             <label>First Name</label>
-            <input type="text" th:field="${user.firstName}" />
+            <input type="text"  th:field="${user.firstName}" th:value="les"/>
         </div>
         <div>
             <label>Last Name </label>
@@ -26,7 +26,7 @@
             <label>Join Channel</label>
             <select id="channelId" name="channelId" th:with="channel=*{channel}">
                 <option value ="" th:disabled="disabled" th:selected="selected">-- Select Channel --</option>
-                <option th:each="item : ${channel.channel}" th:value="${item.key}" th:text="${item.value}"></option>
+                <option th:each="item : ${channel}" th:value="${item.key}" th:text="${item.value}"></option>
             </select>
             <br><br>
             <button type="submit">Submit</button>

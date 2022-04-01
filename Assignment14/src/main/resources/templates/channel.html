@@ -5,10 +5,24 @@
     <title>Channel Page</title>
 </head>
 <body>
-    <h1>Channel Page</h1>
+    <h1>Welcome <span id="fullName" th:text="${fullName}"></span>, to the
+        <span id="span_channelName" th:text="${channelName}" style="color:cadetblue"></span> Channel
+    </h1>
     <div>
-        <label>First Name</label>
-        <label th:text="${user.firstName}">tmp</label>
+        <label>Chat History</label>
+        <div id="chatHistory" style="border: thin solid cadetblue;width: 50%;"></div>
+        <div>
+            <textarea id="chatMessage" name="chatMessage" style="width: 40%"></textarea>
+            <span id="span_uid" style="display: none;" th:text="${fullName}"></span>
+            <span id="span_cid" style="display: none;" th:text="${channelId}"></span>
+        </div>
+        <div>
+            <!-- button id="btnTest" type="submit" style="width:25px;height:25px"></button -->
+        </div>
+        <script th:inline="javascript" src="/js/channel.js">
+        </script>
+        <script th:inline="javascript" src="/js/poller.js">
+        </script>
     </div>
 </body>
 </html>

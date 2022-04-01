@@ -10,5 +10,17 @@ import java.util.Map;
 @Data
 @Service
 public class ChannelServiceImpl implements ChannelService {
-    private Map<Long,String> channel = new HashMap<>();
+    private static Map<Long,String> channel = new HashMap<>();
+
+    public static Map<Long,String> getChannels(){
+        channel.put(Long.valueOf(1),"General");
+        channel.put(Long.valueOf(2),"Support");
+        channel.put(Long.valueOf(3), "All Things DeV");
+
+        return channel;
+    }
+
+    public static String getChannelName(Long channelId){
+        return channel.get(channelId);
+    }
 }
