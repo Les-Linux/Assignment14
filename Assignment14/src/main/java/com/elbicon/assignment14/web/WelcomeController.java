@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/")
 public class WelcomeController {
 
     @Autowired
@@ -26,6 +27,10 @@ public class WelcomeController {
 
 //    @Autowired
 //    ChannelServiceImpl channel;
+    @GetMapping("/")
+    public String homePage(){
+        return "redirect:/welcome";
+    }
 
     @GetMapping("/welcome")
     public String getWelcomePage(ModelMap model){

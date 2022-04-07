@@ -5,21 +5,21 @@
     <title>Welcome</title>
 </head>
 <body>
+    <div>
         <h1>Welcome
-            <!-- span th:if="${user.firstName != null} and ${user.firstName != ''}">[[${user.firstName}]]</span -->
-            <!-- span th:unless="${user.firstName != null} and ${user.firstName != ''}">Guest</span -->
-            <span th:text="${#strings.defaultString(user.firstName,'Guest')}"></span>
+            <span id="span_welcomeUser" style="color:cadetblue"></span>
         </h1>
+        <script th:inline="javascript" src="/js/welcome.js"></script>
     </div>
     <br>
     <form th:action="@{/welcome/channel}" th:method="POST">
-        <div>
+        <div id="div_firstName">
             <label>First Name</label>
-            <input type="text"  th:field="${user.firstName}" th:value="les"/>
+            <input type="text" th:id="inp_firstName" th:field="${user.firstName}"/>
         </div>
-        <div>
+        <div id="div_lastName">
             <label>Last Name </label>
-            <input type="text" th:field="${user.lastName}"/>
+            <input type="text" th:id="inp_lastName" th:field="${user.lastName}"/>
         </div>
             <br>
         <div>
@@ -32,5 +32,6 @@
             <button type="submit">Submit</button>
         </div>
     </form>
+    <script th:inline="javascript" src="/js/login.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+let firstName = document.querySelector('#span_firstName').innerHTML
+let lastName = document.querySelector('#span_lastName').innerHTML
 let userId = document.querySelector('#span_uid').innerHTML
 let channelId = document.querySelector('#span_cid').innerHTML
 let chatHistory = document.querySelector('#chatHistory')
@@ -51,8 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if(isEmpty(sessionStorage.getItem('userId'))){
             sessionStorage.setItem('userId',userId)
             sessionStorage.setItem('channelName', channelName)
+            sessionStorage.setItem('firstName',firstName)
+            sessionStorage.setItem('lastName',lastName)
         } else if((sessionStorage.getItem('userId') !== userId) && (userId !== null) && (userId != '')){
             sessionStorage.setItem('userId',userId)
+            sessionStorage.setItem('firstName',firstName)
+            sessionStorage.setItem('lastName', lastName)
         }
 
         document.querySelector('#fullName').innerHTML = sessionStorage.getItem('userId')
